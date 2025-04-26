@@ -5,6 +5,10 @@ import speech_recognition as sr
 
 st.set_page_config(page_title="Streamlit 외국어 번역기", page_icon="🎙️")
 
+with st.sidebar:
+    st.write("made by **Kim Sang-woo**")
+    st.write("*Dukmoon girl's high school*")
+
 
 st.title("🎙️ Streamlit 외국어 번역기")
 st.header("한국어 음성 입력 → 텍스트로 변환 → 선택한 외국어로 번역 → 외국어 음성 출력")
