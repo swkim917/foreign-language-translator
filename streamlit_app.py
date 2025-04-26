@@ -17,21 +17,37 @@ st.header("한국어 음성 입력 → 텍스트로 변환 → 선택한 외국�
 # 외국어 선택하기
 lang = st.selectbox(
     "어떤 외국어로 번역할까요?",
-    ("영어", "일본어", "중국어", "프랑스어", "독일어", "스페인어")
+    ("영어", "일본어", "중국어(대륙)", "중국어(대만)", "프랑스어", "독일어", "스페인어", "이탈리아어", "러시아어", "베트남어", "필리핀어", "태국어", "아랍어", "힌디어")
 )
 
 if lang == "영어":
     lang_code = "en"
 elif lang == "일본어":
     lang_code = "ja"
-elif lang == "중국어":
+elif lang == "중국어(대륙)":
     lang_code = "zh-CN"
+elif lang == "중국어(대만)":
+    lang_code = "zh-TW"
 elif lang == "프랑스어":
     lang_code = "fr"
 elif lang == "독일어":
     lang_code = "de"
 elif lang == "스페인어":
     lang_code = "es"
+elif lang == "이탈리아어":
+    lang_code = "it"
+elif lang == "러시아어":
+    lang_code = "ru"
+elif lang == "베트남어":
+    lang_code = "vi"
+elif lang == "필리핀어":
+    lang_code = "tl"
+elif lang == "태국어":
+    lang_code = "th"
+elif lang == "아랍어":
+    lang_code = "ar"
+elif lang == "힌디어":
+    lang_code = "hi"
 
 
 
@@ -61,7 +77,7 @@ if audio_data:
 
 
         # 한국어를 변수 lang에 지정한 언어로 번역한 텍스트 출력하기
-        # 한국어(ko), 영어(en), 일본어(ja), 간체 중국어(zh-CN), 번체 중국어(zh-TW), 프랑스어(fr), 독일어(de), 이탈리아어(it), 스페인어(es), 러시아어(ru), 아랍어(ar), 포르투갈어(pt)
+        # 한국어(ko), 영어(en), 일본어(ja), 간체 중국어(zh-CN), 번체 중국어(zh-TW), 프랑스어(fr), 독일어(de), 스페인어(es), 이탈리아어(it), 러시아어(ru), 아랍어(ar), 포르투갈어(pt)
         translator = Translator()
         result = translator.translate(text, dest=lang_code)
 
