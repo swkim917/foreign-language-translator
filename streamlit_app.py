@@ -3,8 +3,11 @@ from googletrans import Translator
 from gtts import gTTS
 import speech_recognition as sr
 
+st.set_page_config(page_title="Streamlit 외국어 번역기", page_icon="🎙️")
+
+
 st.title("🎙️ Streamlit 외국어 번역기")
-st.header("한국어 음성 입력 → 텍스트로 변환 → 선택한 외국어로 번역 → 오디오 출력")
+st.header("한국어 음성 입력 → 텍스트로 변환 → 선택한 외국어로 번역 → 외국어 음성 출력")
 
 
 # 외국어 선택하기
@@ -58,7 +61,7 @@ if audio_data:
         translator = Translator()
         result = translator.translate(text, dest=lang_code)
 
-        st.success("📝 " + lang + "로 번역:")
+        st.success("💬 " + lang + "로 번역:")
         st.write(result.text)
 
 
@@ -68,5 +71,6 @@ if audio_data:
         tts.save('speech.mp3')
 
         # 오디오 파일 소리 재생하기
+        st.success("🔊 " + lang + " 음성 출력:")
         st.audio('speech.mp3', autoplay=True)
 
