@@ -3,7 +3,7 @@ from googletrans import Translator
 from gtts import gTTS
 import speech_recognition as sr
 
-st.set_page_config(page_title="Streamlit 외국어 번역기", page_icon="🎙️")
+st.set_page_config(page_title="스트림릿 외국어 번역기", page_icon="🎙️")
 
 with st.sidebar:
     st.write("made by **Kim Sang-woo**")
