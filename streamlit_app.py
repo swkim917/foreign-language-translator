@@ -58,7 +58,7 @@ if audio_data:
         translator = Translator()
         result = translator.translate(text, dest=lang_code)
 
-        st.success("📝 영어로 번역:")
+        st.success("📝 " + lang + "로 번역:")
         st.write(result.text)
 
 
