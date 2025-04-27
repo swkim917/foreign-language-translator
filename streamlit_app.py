@@ -2,6 +2,7 @@ import streamlit as st
 from googletrans import Translator
 from gtts import gTTS
 import speech_recognition as sr
+import os
 
 st.set_page_config(page_title="스트림릿 외국어 번역기", page_icon="🎙️")
 
@@ -94,3 +95,6 @@ if audio_data:
         st.success("🔊 " + lang + " 음성 출력:")
         st.audio('speech.mp3', autoplay=True)
 
+        # speech.mp3 파일 삭제
+        os.remove('speech.mp3')
+        
